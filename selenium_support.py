@@ -106,7 +106,7 @@ class selenium_support():
                 'version': '',
                 'window-size':'Maximized'
                 }
-                self.driver =webdriver.Remote(driver_path,desired_capabilities=capabilities)    
+                self.driver =webdriver.Remote(driver_path,desired_capabilities=webdriver.DesiredCapabilities.FIREFOX)    
             else:
                 self.driver=webdriver.Firefox(options=options)
                 
@@ -126,7 +126,7 @@ class selenium_support():
                 'version': '',
                 'window-size':'Maximized'
                 }
-                self.driver =webdriver.Remote(driver_path,desired_capabilities=capabilities)    
+                self.driver =webdriver.Remote(driver_path,desired_capabilities=webdriver.DesiredCapabilities.OPERA)
             else:
                 self.driver=webdriver.Chrome(chrome_options=chrome_options) 
         
