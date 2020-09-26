@@ -38,6 +38,10 @@ class selenium_support():
         args=self.parser.parse_args()
         print(args)
         self.is_lambda=False
+        try:
+            os.mkdir('./screenshot')
+        except:
+            pass
         browser = args.browser
         if args.awslambda:
             chrome_options = Options()
@@ -128,7 +132,7 @@ class selenium_support():
         
 
 
-    def take_screenshot(self,name,path='.'):
+    def take_screenshot(self,name,path='./screenshot'):
         """
         function to take SS
 
