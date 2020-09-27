@@ -52,7 +52,7 @@ class Test_ATT(unittest.TestCase):
         account=self.support.driver.find_element_by_xpath("//span[@id='z1-profile-text' and .='Account']")
         account.click()
         print("Account clicked")
-
+        self.support.take_screenshot('payment.png')
         time.sleep(12)
         Pay_without_signing_in=self.support.driver.find_element_by_xpath("//span[.='Pay without signing in']")
         Pay_without_signing_in.click()
@@ -72,6 +72,7 @@ class Test_ATT(unittest.TestCase):
         time.sleep(10)
         click_internet=self.support.driver.find_element_by_xpath("//span[@class='z1-tier1-text' and .='Internet']")
         click_internet.click()
+        self.support.take_screenshot('internet.png')
         print("Internet clciked")
         time.sleep(15)
         click_Check_availability=self.support.driver.find_element_by_xpath('//a[@title="Check availability"]')
