@@ -120,6 +120,7 @@ if __name__ == "__main__":
     #unittest.main(verbosity=2)
     """
     
+    time.sleep(30)
     main()
     #with open('testing.out', 'w') as f: 
     #    main(f)
