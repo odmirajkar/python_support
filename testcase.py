@@ -8,13 +8,27 @@ from os import path
 class Test_ATT(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        time.sleep(80)
+        #time.sleep(80)
         cls.support=selenium_support()
-        cls.support.init()
-        url="https://www.att.com"
-        cls.support.driver.get(url)
-        cls.support.take_screenshot('att.png')
-        print(cls.support.driver.title)
+        retry =5
+        while retry:
+            
+            
+            url="https://www.att.com"
+            try:
+                cls.support.init()
+                if cls.support.driver:
+                    cls.support.driver.get(url)
+                    cls.support.take_screenshot('att.png')
+                    print(cls.support.driver.title)
+                    break
+            except:    
+                retry=retry -1
+                print("connection failed retry pending ",retry)
+                time.sleep(10) 
+        if retry == 0:
+            cls.assertEqual(1,2,"Failed to connect to browser")
+        
 
     def test_signin_testcase(self):
         print("hi")
@@ -120,7 +134,7 @@ if __name__ == "__main__":
     #unittest.main(verbosity=2)
     """
     
-    time.sleep(30)
+    #time.sleep(30)
     main()
     #with open('testing.out', 'w') as f: 
     #    main(f)
