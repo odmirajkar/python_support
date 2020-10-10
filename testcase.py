@@ -8,6 +8,7 @@ from os import path
 class Test_ATT(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        time.sleep(80)
         cls.support=selenium_support()
         cls.support.init()
         url="https://www.att.com"
