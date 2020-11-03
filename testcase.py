@@ -31,7 +31,7 @@ class Test_ATT(unittest.TestCase):
         
 
     def test_signin_testcase(self):
-        print(cls.support.driver.capabilities)
+        print(self.support.driver.capabilities)
         time.sleep(5)
         account=self.support.driver.find_element_by_xpath("//span[@id='z1-profile-text' and .='Account']")
         account.click()
