@@ -20,7 +20,7 @@ class Test_ATT(unittest.TestCase):
                 if cls.support.driver:
                     cls.support.driver.get(url)
                     cls.support.take_screenshot('att.png')
-                    print(cls.support.driver.title)
+                    print(cls.support.driver.capabilities)
                     break
             except:    
                 retry=retry -1
