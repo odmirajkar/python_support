@@ -5,6 +5,27 @@ import sys
 import HtmlTestRunner
 from os import path
 
+"""
+This is actual testcase file for your selenium project.
+it uses python unitTest framework to create testcases.
+
+Best practicse 
+1. copy this file instead of editing it, this will makesure you have blueprint of testcase design with you.
+you can create mutiple python files representing multiple test suite. eg sanity suite,regression suite etc.
+
+2. do not change below menthods 
+    1. setupClass- required to set up browsers 
+    2.TearDownClass- close the browsers
+    3. main method- this is to set up html report and execute testcases in file
+
+3. as per unittest framwork, you need to create testcase in a method which start with word test
+   eg-test_signin_testcase(self) , these are dummy test cases you can edit as per your testcases.
+
+4. since browser driver is managed by selenium_support class, which enables cross browser testing. refer to driver object as cls.support.driver or self.support.driver
+5. for screenshot use take_screenshot from support library 
+
+"""
+
 class Test_ATT(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
